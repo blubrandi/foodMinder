@@ -14,6 +14,9 @@
 		85E977B22360D689008EE61C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E977B02360D689008EE61C /* LaunchScreen.storyboard */; };
 		85E977BA2360D886008EE61C /* AddFoodMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */; };
 		85E977BC2360E08D008EE61C /* FoodMinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977BB2360E08D008EE61C /* FoodMinder.swift */; };
+		85E977BE2360E166008EE61C /* FoodMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977BD2360E166008EE61C /* FoodMinderViewController.swift */; };
+		85E977C02360E248008EE61C /* FoodMinderPersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977BF2360E248008EE61C /* FoodMinderPersistentController.swift */; };
+		85E977C22360E567008EE61C /* FoodMinderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977C12360E567008EE61C /* FoodMinderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		85E977B32360D689008EE61C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodMinderViewController.swift; sourceTree = "<group>"; };
 		85E977BB2360E08D008EE61C /* FoodMinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMinder.swift; sourceTree = "<group>"; };
+		85E977BD2360E166008EE61C /* FoodMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMinderViewController.swift; sourceTree = "<group>"; };
+		85E977BF2360E248008EE61C /* FoodMinderPersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMinderPersistentController.swift; sourceTree = "<group>"; };
+		85E977C12360E567008EE61C /* FoodMinderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMinderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,51 @@
 		85E977A42360D685008EE61C /* foodMinder */ = {
 			isa = PBXGroup;
 			children = (
-				85E977A52360D685008EE61C /* AppDelegate.swift */,
-				85E977A72360D685008EE61C /* SceneDelegate.swift */,
-				85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */,
-				85E977BB2360E08D008EE61C /* FoodMinder.swift */,
-				85E977AB2360D685008EE61C /* Main.storyboard */,
-				85E977AE2360D689008EE61C /* Assets.xcassets */,
-				85E977B02360D689008EE61C /* LaunchScreen.storyboard */,
+				85E977C52360E6DD008EE61C /* Helpers */,
+				85E977C32360E6A3008EE61C /* Models */,
+				85E977C42360E6CB008EE61C /* Views */,
+				85E977C62360E8A8008EE61C /* View Controllers */,
 				85E977B32360D689008EE61C /* Info.plist */,
 			);
 			path = foodMinder;
+			sourceTree = "<group>";
+		};
+		85E977C32360E6A3008EE61C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85E977BB2360E08D008EE61C /* FoodMinder.swift */,
+				85E977BF2360E248008EE61C /* FoodMinderPersistentController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85E977C42360E6CB008EE61C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E977C12360E567008EE61C /* FoodMinderTableViewCell.swift */,
+				85E977B02360D689008EE61C /* LaunchScreen.storyboard */,
+				85E977AB2360D685008EE61C /* Main.storyboard */,
+				85E977AE2360D689008EE61C /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		85E977C52360E6DD008EE61C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85E977A52360D685008EE61C /* AppDelegate.swift */,
+				85E977A72360D685008EE61C /* SceneDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		85E977C62360E8A8008EE61C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85E977BD2360E166008EE61C /* FoodMinderViewController.swift */,
+				85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				85E977BA2360D886008EE61C /* AddFoodMinderViewController.swift in Sources */,
+				85E977BE2360E166008EE61C /* FoodMinderViewController.swift in Sources */,
 				85E977A62360D685008EE61C /* AppDelegate.swift in Sources */,
 				85E977BC2360E08D008EE61C /* FoodMinder.swift in Sources */,
+				85E977C22360E567008EE61C /* FoodMinderTableViewCell.swift in Sources */,
 				85E977A82360D685008EE61C /* SceneDelegate.swift in Sources */,
+				85E977C02360E248008EE61C /* FoodMinderPersistentController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
