@@ -13,6 +13,7 @@
 		85E977AF2360D689008EE61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E977AE2360D689008EE61C /* Assets.xcassets */; };
 		85E977B22360D689008EE61C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E977B02360D689008EE61C /* LaunchScreen.storyboard */; };
 		85E977BA2360D886008EE61C /* AddFoodMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */; };
+		85E977BC2360E08D008EE61C /* FoodMinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977BB2360E08D008EE61C /* FoodMinder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		85E977B12360D689008EE61C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85E977B32360D689008EE61C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodMinderViewController.swift; sourceTree = "<group>"; };
+		85E977BB2360E08D008EE61C /* FoodMinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMinder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				85E977A52360D685008EE61C /* AppDelegate.swift */,
 				85E977A72360D685008EE61C /* SceneDelegate.swift */,
 				85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */,
+				85E977BB2360E08D008EE61C /* FoodMinder.swift */,
 				85E977AB2360D685008EE61C /* Main.storyboard */,
 				85E977AE2360D689008EE61C /* Assets.xcassets */,
 				85E977B02360D689008EE61C /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				85E977BA2360D886008EE61C /* AddFoodMinderViewController.swift in Sources */,
 				85E977A62360D685008EE61C /* AppDelegate.swift in Sources */,
+				85E977BC2360E08D008EE61C /* FoodMinder.swift in Sources */,
 				85E977A82360D685008EE61C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

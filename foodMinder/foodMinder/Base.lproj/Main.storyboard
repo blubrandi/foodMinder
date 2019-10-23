@@ -14,14 +14,46 @@
                     <view key="view" contentMode="scaleToFill" id="Of9-l4-3Ml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-7p-xgp">
+                                <rect key="frame" x="10" y="128" width="394" height="415"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oYd-ep-TuN">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oYd-ep-TuN" id="qDw-Il-Jav">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reminder title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-pi-ZNs">
+                                                    <rect key="frame" x="20" y="11" width="102" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TXs-7p-xgp" firstAttribute="centerX" secondItem="Of9-l4-3Ml" secondAttribute="centerX" id="GwT-3d-hcw"/>
+                            <constraint firstItem="Kza-Zg-Z6c" firstAttribute="trailing" secondItem="TXs-7p-xgp" secondAttribute="trailing" constant="10" id="Qh0-Qm-mwR"/>
+                            <constraint firstItem="Kza-Zg-Z6c" firstAttribute="bottom" secondItem="TXs-7p-xgp" secondAttribute="bottom" constant="319" id="Ueq-S9-w33"/>
+                            <constraint firstItem="TXs-7p-xgp" firstAttribute="top" secondItem="Kza-Zg-Z6c" secondAttribute="top" constant="40" id="X8j-Mp-KSh"/>
+                            <constraint firstItem="TXs-7p-xgp" firstAttribute="leading" secondItem="Kza-Zg-Z6c" secondAttribute="leading" constant="10" id="xOd-Og-Sxc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kza-Zg-Z6c"/>
                     </view>
                     <navigationItem key="navigationItem" id="DlL-ZK-Ijd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="e6Q-hF-sqZ">
                             <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="NMR-Ne-pL9" kind="popoverPresentation" popoverAnchorBarButtonItem="e6Q-hF-sqZ" id="xoa-NJ-zuG">
+                                <segue destination="NMR-Ne-pL9" kind="popoverPresentation" identifier="ToAddFoodMinderSegue" popoverAnchorBarButtonItem="e6Q-hF-sqZ" id="xoa-NJ-zuG">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -71,6 +103,9 @@
                                         <state key="normal" title="Create foodMinder">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveFoodMinderTapped:" destination="NMR-Ne-pL9" eventType="touchUpInside" id="r5K-p7-NbB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -101,6 +136,10 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="foodMinderDatePicker" destination="Gop-Hi-Tv8" id="sFH-2e-0A8"/>
+                        <outlet property="foodMinderTitle" destination="rbV-jZ-AKn" id="WJz-GV-v3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QwS-de-RM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
