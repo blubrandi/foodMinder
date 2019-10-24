@@ -8,18 +8,11 @@
 
 import Foundation
 
-struct FoodMinder: Codable {
+struct FoodMinder: Codable, Equatable{
     
     let title: String
     let body: String
-    var completed: Bool
-//    var snackOrMeal: String {
-//        
-//        if snackOrMeal == "0" {
-//           let snackOrMeal = "Snack"
-//           } else {
-//           let snackOrMeal = "Meal"
-//           }
-//        return snackOrMeal
-//    }
+    let identifier: String = UUID().uuidString
+    var isActive: Bool
+
 }

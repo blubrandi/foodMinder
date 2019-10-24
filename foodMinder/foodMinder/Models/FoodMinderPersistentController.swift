@@ -16,6 +16,14 @@ class FoodMinderPersistentController {
         loadFromPersistentStore()
     }
     
+    func toogleActive(for foodMinder: FoodMinder) {
+        
+        guard let index = foodMinders.firstIndex(of: foodMinder) else { return }
+        foodMinders[index].isActive = !foodMinders[index].isActive
+        
+        saveToPersistentStore()
+    }
+    
     func loadFromPersistentStore() {
         
         do {

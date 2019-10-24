@@ -28,25 +28,26 @@ class AddFoodMinderViewController: UIViewController {
             DispatchQueue.main.async {
                 if settings.authorizationStatus == UNAuthorizationStatus.authorized {
                     let time = self.foodMinderDatePicker.date.timeIntervalSinceNow
-                    
+                                       
                     
                     if time > 0 {
                         
                         let notificationContent = UNMutableNotificationContent()
                         guard let foodMinderTitle = self.foodMinderTitle.text else { return }
-//                        let snackOrMealChoice = self.snackOrMeal.selectedSegmentIndex
 
                         
                         notificationContent.body = foodMinderTitle
                         notificationContent.title = "foodMinder"
                         notificationContent.sound = UNNotificationSound.default
                         
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
-                        let request = UNNotificationRequest(identifier: "foodMinder", content: notificationContent, trigger: trigger)
                         
-                        let foodMinder = FoodMinder(title: notificationContent.title, body: notificationContent.body, completed: false)
+                        let foodMinder = FoodMinder(title: notificationContent.title, body: notificationContent.body, isActive: true)
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: true)
+                        let request = UNNotificationRequest(identifier: foodMinder.identifier, content: notificationContent, trigger: trigger)
+                        
+                
                         self.delegate?.foodMinderWasAdded(foodMinder)
-                        
                         
                         print(foodMinder)
                         

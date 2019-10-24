@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85D18C4223621D5F00131893 /* UpdateFoodMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D18C4123621D5F00131893 /* UpdateFoodMinderViewController.swift */; };
 		85E977A62360D685008EE61C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977A52360D685008EE61C /* AppDelegate.swift */; };
 		85E977A82360D685008EE61C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977A72360D685008EE61C /* SceneDelegate.swift */; };
 		85E977AD2360D685008EE61C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E977AB2360D685008EE61C /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85D18C4123621D5F00131893 /* UpdateFoodMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFoodMinderViewController.swift; sourceTree = "<group>"; };
 		85E977A22360D685008EE61C /* foodMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E977A52360D685008EE61C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85E977A72360D685008EE61C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				85E977BD2360E166008EE61C /* FoodMinderViewController.swift */,
 				85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */,
+				85D18C4123621D5F00131893 /* UpdateFoodMinderViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D18C4223621D5F00131893 /* UpdateFoodMinderViewController.swift in Sources */,
 				85E977BA2360D886008EE61C /* AddFoodMinderViewController.swift in Sources */,
 				85E977BE2360E166008EE61C /* FoodMinderViewController.swift in Sources */,
 				85E977A62360D685008EE61C /* AppDelegate.swift in Sources */,
@@ -332,7 +336,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = foodMinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -340,6 +346,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.foodMinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -349,7 +356,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = foodMinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.foodMinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

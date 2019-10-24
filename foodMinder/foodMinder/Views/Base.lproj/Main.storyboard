@@ -20,28 +20,40 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodMinderCell" id="oYd-ep-TuN" customClass="FoodMinderTableViewCell" customModule="foodMinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oYd-ep-TuN" id="qDw-Il-Jav">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-pi-ZNs">
-                                                    <rect key="frame" x="20" y="11" width="274" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-4I-m1Z">
+                                                    <rect key="frame" x="20" y="6.5" width="354" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-pi-ZNs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="279" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-xE-3V4">
+                                                            <rect key="frame" x="305" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="toggleActive:" destination="0CP-fY-b4X" eventType="valueChanged" id="lG0-19-OkW"/>
+                                                                <action selector="toggleIsActive:" destination="0CP-fY-b4X" eventType="valueChanged" id="XrM-DP-oaN"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Bi4-pi-ZNs" firstAttribute="leading" secondItem="qDw-Il-Jav" secondAttribute="leadingMargin" id="IAf-Ln-hNG"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Bi4-pi-ZNs" secondAttribute="trailing" constant="80" id="SM2-l3-LZf"/>
-                                                <constraint firstItem="Bi4-pi-ZNs" firstAttribute="top" secondItem="qDw-Il-Jav" secondAttribute="topMargin" id="bHu-hE-LGR"/>
-                                                <constraint firstItem="Bi4-pi-ZNs" firstAttribute="centerY" secondItem="qDw-Il-Jav" secondAttribute="centerY" id="cHS-u7-mxG"/>
+                                                <constraint firstItem="p7Q-4I-m1Z" firstAttribute="centerY" secondItem="qDw-Il-Jav" secondAttribute="centerY" id="tmW-2d-HVl"/>
+                                                <constraint firstAttribute="trailing" secondItem="p7Q-4I-m1Z" secondAttribute="trailing" constant="20" id="wuH-3W-hoW"/>
+                                                <constraint firstItem="p7Q-4I-m1Z" firstAttribute="leading" secondItem="qDw-Il-Jav" secondAttribute="leading" constant="20" id="y7e-3g-bpO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="foodMinderTextLabel" destination="Bi4-pi-ZNs" id="dbT-eq-xLf"/>
+                                            <segue destination="TG7-wi-a7Y" kind="show" identifier="ToFoodMinderUpdateSegue" id="TCx-Ey-lUZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,6 +73,10 @@
                         <viewLayoutGuide key="safeArea" id="Kza-Zg-Z6c"/>
                     </view>
                     <navigationItem key="navigationItem" id="DlL-ZK-Ijd">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="foodMinderLogo" id="Cba-KO-2RH">
+                            <inset key="imageInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="e6Q-hF-sqZ">
                             <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -78,6 +94,74 @@
             </objects>
             <point key="canvasLocation" x="1228.985507246377" y="29.464285714285712"/>
         </scene>
+        <!--Edit foodMinder-->
+        <scene sceneID="rn5-gh-3eb">
+            <objects>
+                <viewController title="Edit foodMinder" id="TG7-wi-a7Y" customClass="UpdateFoodMinderViewController" customModule="foodMinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L78-if-gfu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" id="FfQ-Wk-I2v">
+                                <rect key="frame" x="43" y="123" width="328.5" height="468"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update foodMinder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BK-FS-Q83">
+                                        <rect key="frame" x="22.5" y="0.0" width="283.5" height="277"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="foodMinder Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-82-bgM">
+                                        <rect key="frame" x="97" y="297" width="134.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ilv-tc-ZQX"/>
+                                        </constraints>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="foodMinderTitle:" destination="TG7-wi-a7Y" eventType="editingDidEnd" id="0cM-Nv-57x"/>
+                                        </connections>
+                                    </textField>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GEp-Ye-oPy">
+                                        <rect key="frame" x="140" y="357" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="isActiveSwitch:" destination="TG7-wi-a7Y" eventType="valueChanged" id="KGp-lE-Gj5"/>
+                                        </connections>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-dn-Ou1">
+                                        <rect key="frame" x="72" y="408" width="185" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cDl-bw-d5j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Update foodMinder">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveFoodMinderTapped:" destination="NMR-Ne-pL9" eventType="touchUpInside" id="DEg-uu-VJ2"/>
+                                            <action selector="updateFoodMinderButton:" destination="TG7-wi-a7Y" eventType="touchUpInside" id="GpB-Bq-dQL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="Qcx-PU-cVL"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aV3-5i-D4V"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B4E-Xd-2nW"/>
+                    <connections>
+                        <outlet property="activeSwtich" destination="GEp-Ye-oPy" id="3xI-s8-Sgh"/>
+                        <outlet property="foodMinderTitle" destination="OzC-82-bgM" id="stR-BC-xyR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkv-wW-UGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="340"/>
+        </scene>
         <!--Add Food Minder View Controller-->
         <scene sceneID="mkw-0V-IAi">
             <objects>
@@ -87,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-LV-k46">
-                                <rect key="frame" x="43" y="40" width="328.5" height="468"/>
+                                <rect key="frame" x="43" y="40" width="328.5" height="417"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new foodMinder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJa-cw-tBB">
                                         <rect key="frame" x="0.0" y="0.0" width="328.5" height="41"/>
@@ -107,15 +191,8 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gop-Hi-Tv8">
                                         <rect key="frame" x="4" y="121" width="320" height="216"/>
                                     </datePicker>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TgK-di-dh1">
-                                        <rect key="frame" x="107.5" y="356" width="113" height="32"/>
-                                        <segments>
-                                            <segment title="Snack"/>
-                                            <segment title="Meal"/>
-                                        </segments>
-                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1u-TJ-508">
-                                        <rect key="frame" x="0.0" y="408" width="328.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="357" width="328.5" height="60"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="VLb-Yv-IKI"/>
@@ -150,12 +227,11 @@
                     <connections>
                         <outlet property="foodMinderDatePicker" destination="Gop-Hi-Tv8" id="sFH-2e-0A8"/>
                         <outlet property="foodMinderTitle" destination="rbV-jZ-AKn" id="WJz-GV-v3a"/>
-                        <outlet property="snackOrMeal" destination="TgK-di-dh1" id="YJD-Hh-IPd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QwS-de-RM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080" y="29"/>
+            <point key="canvasLocation" x="2175" y="-334"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SjD-jM-WBl">
@@ -176,4 +252,7 @@
             <point key="canvasLocation" x="318.84057971014494" y="29.464285714285712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="foodMinderLogo" width="100" height="100"/>
+    </resources>
 </document>
