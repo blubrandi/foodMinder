@@ -25,6 +25,13 @@ class FoodMinderViewController: UIViewController {
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           if editingStyle == .delete {
+            self.foodMinderPersisitentController.foodMinders.remove(at: indexPath.row)
+               tableView.deleteRows(at: [indexPath], with: .fade)
+           }
+       }
+    
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Navigation
@@ -62,6 +69,7 @@ extension FoodMinderViewController: AddFoodMinderDelegate {
         DispatchQueue.main.async {
             self.foodMinderPersisitentController.saveToPersistentStore()
             self.tableView.reloadData()
+            self.navigationController?.popToRootViewController(animated: false)
         }
     }
 }

@@ -13,5 +13,13 @@ struct FoodMinder: Codable {
     let title: String
     let body: String
     var completed: Bool
-    
+//    var snackOrMeal: String {
+//        
+//        if snackOrMeal == "0" {
+//           let snackOrMeal = "Snack"
+//           } else {
+//           let snackOrMeal = "Meal"
+//           }
+//        return snackOrMeal
+//    }
 }

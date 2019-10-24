@@ -20,20 +20,25 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodMinderCell" id="oYd-ep-TuN" customClass="FoodMinderTableViewCell" customModule="foodMinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="394" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oYd-ep-TuN" id="qDw-Il-Jav">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reminder title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-pi-ZNs">
-                                                    <rect key="frame" x="20" y="11" width="102" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-pi-ZNs">
+                                                    <rect key="frame" x="20" y="11" width="274" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bi4-pi-ZNs" firstAttribute="leading" secondItem="qDw-Il-Jav" secondAttribute="leadingMargin" id="IAf-Ln-hNG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Bi4-pi-ZNs" secondAttribute="trailing" constant="80" id="SM2-l3-LZf"/>
+                                                <constraint firstItem="Bi4-pi-ZNs" firstAttribute="top" secondItem="qDw-Il-Jav" secondAttribute="topMargin" id="bHu-hE-LGR"/>
+                                                <constraint firstItem="Bi4-pi-ZNs" firstAttribute="centerY" secondItem="qDw-Il-Jav" secondAttribute="centerY" id="cHS-u7-mxG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="foodMinderTextLabel" destination="Bi4-pi-ZNs" id="dbT-eq-xLf"/>
@@ -81,8 +86,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-LV-k46">
-                                <rect key="frame" x="43" y="40" width="328.5" height="405"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-LV-k46">
+                                <rect key="frame" x="43" y="40" width="328.5" height="468"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new foodMinder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJa-cw-tBB">
                                         <rect key="frame" x="0.0" y="0.0" width="328.5" height="41"/>
@@ -91,7 +96,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="foodMinder Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbV-jZ-AKn">
-                                        <rect key="frame" x="0.0" y="57" width="328.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="61" width="328.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="quH-62-nzP"/>
                                         </constraints>
@@ -100,10 +105,17 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gop-Hi-Tv8">
-                                        <rect key="frame" x="4" y="113" width="320" height="216"/>
+                                        <rect key="frame" x="4" y="121" width="320" height="216"/>
                                     </datePicker>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TgK-di-dh1">
+                                        <rect key="frame" x="107.5" y="356" width="113" height="32"/>
+                                        <segments>
+                                            <segment title="Snack"/>
+                                            <segment title="Meal"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1u-TJ-508">
-                                        <rect key="frame" x="0.0" y="345" width="328.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="408" width="328.5" height="60"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="VLb-Yv-IKI"/>
@@ -113,7 +125,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="saveFoodMinderTapped:" destination="NMR-Ne-pL9" eventType="touchUpInside" id="r5K-p7-NbB"/>
+                                            <action selector="saveFoodMinderTapped:" destination="NMR-Ne-pL9" eventType="touchUpInside" id="7Qg-xH-UrO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -125,16 +137,6 @@
                                     <constraint firstItem="R1u-TJ-508" firstAttribute="leading" secondItem="Taq-LV-k46" secondAttribute="leading" id="seo-5c-95S"/>
                                 </constraints>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ko-2J-KEd">
-                                <rect key="frame" x="0.0" y="759" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="cancel" id="rKA-f6-IkC">
-                                        <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -148,6 +150,7 @@
                     <connections>
                         <outlet property="foodMinderDatePicker" destination="Gop-Hi-Tv8" id="sFH-2e-0A8"/>
                         <outlet property="foodMinderTitle" destination="rbV-jZ-AKn" id="WJz-GV-v3a"/>
+                        <outlet property="snackOrMeal" destination="TgK-di-dh1" id="YJD-Hh-IPd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QwS-de-RM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
