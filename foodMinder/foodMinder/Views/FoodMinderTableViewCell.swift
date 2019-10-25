@@ -11,6 +11,7 @@ import UIKit
 class FoodMinderTableViewCell: UITableViewCell {
     
     let foodMinderPersistentController = FoodMinderPersistentController()
+    var delegate: FoodMinderTableViewCellDelegate?
 
     @IBOutlet weak var foodMinderTextLabel: UILabel!
     @IBOutlet weak var activeSwitch: UISwitch!
@@ -18,7 +19,6 @@ class FoodMinderTableViewCell: UITableViewCell {
     var foodMinder: FoodMinder? {
         didSet {
             updateViews()
-            
         }
     }
     
@@ -26,16 +26,18 @@ class FoodMinderTableViewCell: UITableViewCell {
         guard let foodMinder = foodMinder else { return }
         
         foodMinderTextLabel.text = foodMinder.body
-        
-        
+
     }
     
     @IBAction func toggleActiveSwitch(_ sender: Any) {
+        delegate?.toggleIsActiveFor(cell: self)
+        
         if activeSwitch.isOn {
             foodMinder?.isActive = true
         } else {
             foodMinder?.isActive = false
         }
+        print(foodMinder)
     }
     
 }

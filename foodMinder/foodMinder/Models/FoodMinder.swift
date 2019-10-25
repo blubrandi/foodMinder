@@ -14,5 +14,10 @@ struct FoodMinder: Codable, Equatable {
     var body: String
     let identifier: String = UUID().uuidString
     var isActive: Bool
-
+    
+    init(title: String, body: String, isActive: Bool = true) {
+        self.title = title
+        self.body = body
+        self.isActive = isActive
+    }
 }

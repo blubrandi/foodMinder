@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85D18C4223621D5F00131893 /* UpdateFoodMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D18C4123621D5F00131893 /* UpdateFoodMinderViewController.swift */; };
+		856EF9E6236346790078A0CD /* FoodMinderTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EF9E5236346790078A0CD /* FoodMinderTableViewCellDelegate.swift */; };
 		85E977A62360D685008EE61C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977A52360D685008EE61C /* AppDelegate.swift */; };
 		85E977A82360D685008EE61C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E977A72360D685008EE61C /* SceneDelegate.swift */; };
 		85E977AD2360D685008EE61C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E977AB2360D685008EE61C /* Main.storyboard */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		85D18C4123621D5F00131893 /* UpdateFoodMinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFoodMinderViewController.swift; sourceTree = "<group>"; };
+		856EF9E5236346790078A0CD /* FoodMinderTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMinderTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		85E977A22360D685008EE61C /* foodMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E977A52360D685008EE61C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85E977A72360D685008EE61C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +100,7 @@
 			children = (
 				85E977A52360D685008EE61C /* AppDelegate.swift */,
 				85E977A72360D685008EE61C /* SceneDelegate.swift */,
+				856EF9E5236346790078A0CD /* FoodMinderTableViewCellDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -109,7 +110,6 @@
 			children = (
 				85E977BD2360E166008EE61C /* FoodMinderViewController.swift */,
 				85E977B92360D886008EE61C /* AddFoodMinderViewController.swift */,
-				85D18C4123621D5F00131893 /* UpdateFoodMinderViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -185,13 +185,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85D18C4223621D5F00131893 /* UpdateFoodMinderViewController.swift in Sources */,
 				85E977BA2360D886008EE61C /* AddFoodMinderViewController.swift in Sources */,
 				85E977BE2360E166008EE61C /* FoodMinderViewController.swift in Sources */,
 				85E977A62360D685008EE61C /* AppDelegate.swift in Sources */,
 				85E977BC2360E08D008EE61C /* FoodMinder.swift in Sources */,
 				85E977C22360E567008EE61C /* FoodMinderTableViewCell.swift in Sources */,
 				85E977A82360D685008EE61C /* SceneDelegate.swift in Sources */,
+				856EF9E6236346790078A0CD /* FoodMinderTableViewCellDelegate.swift in Sources */,
 				85E977C02360E248008EE61C /* FoodMinderPersistentController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

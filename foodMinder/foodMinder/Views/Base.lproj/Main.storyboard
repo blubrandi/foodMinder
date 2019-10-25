@@ -54,7 +54,6 @@
                                         <connections>
                                             <outlet property="activeSwitch" destination="1xN-SK-iYF" id="f3t-Mp-cd5"/>
                                             <outlet property="foodMinderTextLabel" destination="Bi4-pi-ZNs" id="dbT-eq-xLf"/>
-                                            <segue destination="TG7-wi-a7Y" kind="show" identifier="ToFoodMinderUpdateSegue" id="TCx-Ey-lUZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,75 +93,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lh-C2-8qG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1228.985507246377" y="29.464285714285712"/>
-        </scene>
-        <!--Edit foodMinder-->
-        <scene sceneID="rn5-gh-3eb">
-            <objects>
-                <viewController title="Edit foodMinder" id="TG7-wi-a7Y" customClass="UpdateFoodMinderViewController" customModule="foodMinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L78-if-gfu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" id="FfQ-Wk-I2v">
-                                <rect key="frame" x="43" y="123" width="328.5" height="468"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update foodMinder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BK-FS-Q83">
-                                        <rect key="frame" x="22.5" y="0.0" width="283.5" height="277"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="foodMinder Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-82-bgM">
-                                        <rect key="frame" x="97" y="297" width="134.5" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Ilv-tc-ZQX"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="foodMinderTitle:" destination="TG7-wi-a7Y" eventType="editingDidEnd" id="0cM-Nv-57x"/>
-                                        </connections>
-                                    </textField>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GEp-Ye-oPy">
-                                        <rect key="frame" x="140" y="357" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="isActiveSwitch:" destination="TG7-wi-a7Y" eventType="valueChanged" id="KGp-lE-Gj5"/>
-                                        </connections>
-                                    </switch>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-dn-Ou1">
-                                        <rect key="frame" x="72" y="408" width="185" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="cDl-bw-d5j"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Update foodMinder">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveFoodMinderTapped:" destination="NMR-Ne-pL9" eventType="touchUpInside" id="DEg-uu-VJ2"/>
-                                            <action selector="updateFoodMinderButton:" destination="TG7-wi-a7Y" eventType="touchUpInside" id="GpB-Bq-dQL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="Qcx-PU-cVL"/>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="aV3-5i-D4V"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="B4E-Xd-2nW"/>
-                    <connections>
-                        <outlet property="activeSwtich" destination="GEp-Ye-oPy" id="3xI-s8-Sgh"/>
-                        <outlet property="backToFoodMinderVC" destination="B4E-Xd-2nW" id="jfg-u3-f90"/>
-                        <outlet property="foodMinderTitle" destination="OzC-82-bgM" id="stR-BC-xyR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkv-wW-UGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2174" y="340"/>
         </scene>
         <!--Add Food Minder View Controller-->
         <scene sceneID="mkw-0V-IAi">

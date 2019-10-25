@@ -17,9 +17,8 @@ class AddFoodMinderViewController: UIViewController {
     
     @IBOutlet weak var foodMinderTitle: UITextField!
     @IBOutlet weak var foodMinderDatePicker: UIDatePicker!
-    @IBOutlet weak var snackOrMeal: UISegmentedControl!
     
-
+    //MARK:  Create a foodMinder with an alert
     
     var delegate: AddFoodMinderDelegate?
     
@@ -28,13 +27,13 @@ class AddFoodMinderViewController: UIViewController {
             DispatchQueue.main.async {
                 if settings.authorizationStatus == UNAuthorizationStatus.authorized {
                     let time = self.foodMinderDatePicker.date.timeIntervalSinceNow
-                                       
+                    
                     
                     if time > 0 {
                         
                         let notificationContent = UNMutableNotificationContent()
                         guard let foodMinderTitle = self.foodMinderTitle.text else { return }
-
+                        
                         
                         notificationContent.body = foodMinderTitle
                         notificationContent.title = "foodMinder"
@@ -46,7 +45,7 @@ class AddFoodMinderViewController: UIViewController {
                         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: true)
                         let request = UNNotificationRequest(identifier: foodMinder.identifier, content: notificationContent, trigger: trigger)
                         
-                
+                        
                         self.delegate?.foodMinderWasAdded(foodMinder)
                         
                         print(foodMinder)
@@ -58,7 +57,7 @@ class AddFoodMinderViewController: UIViewController {
                                     self.dismiss(animated: true, completion: nil)}
                                 alert.addAction(close)
                                 self.present(alert, animated: true)
-        
+                                
                             }
                         }
                         
@@ -67,7 +66,7 @@ class AddFoodMinderViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 
