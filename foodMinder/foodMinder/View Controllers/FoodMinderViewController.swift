@@ -34,7 +34,8 @@ class FoodMinderViewController: UIViewController, UITableViewDataSource {
         
         let foodMinder = foodMinderAt(indexPath: indexPath)
         foodMinderPersisitentController.toogleActive(for: foodMinder)
-        
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [foodMinder.identifier])
+
         tableView.reloadData()
     }
     
@@ -46,6 +47,8 @@ class FoodMinderViewController: UIViewController, UITableViewDataSource {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [foodMinder.identifier])
             self.foodMinderPersisitentController.foodMinders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            foodMinderPersisitentController.saveToPersistentStore()
             
         }
     }
