@@ -11,6 +11,12 @@ import Foundation
 class FoodMinderPersistentController {
    
     var foodMinders: [FoodMinder] = []
+    var activeFoodMinders: [FoodMinder] {
+        return foodMinders.filter({ $0.isActive })
+    }
+    var inactiveFoodMinders: [FoodMinder] {
+        return foodMinders.filter({ $0.isActive == false })
+    }
     
     init() {
         loadFromPersistentStore()
@@ -23,9 +29,15 @@ class FoodMinderPersistentController {
         
         saveToPersistentStore()
     }
+
+    
+    func removeFoodMinder(foodMinder: FoodMinder) {
+        guard let index = foodMinders.firstIndex(of: foodMinder) else { return }
+        foodMinders.remove(at: index)
+        saveToPersistentStore()
+    }
     
     func loadFromPersistentStore() {
-        
         do {
             guard let fileURL = foodMinderURL else { return }
             let foodMinderData = try Data(contentsOf: fileURL)
@@ -47,8 +59,6 @@ class FoodMinderPersistentController {
             } catch {
             print("Your code is bad and you should feel bad \(error)")
         }
-        
-        
     }
 
 

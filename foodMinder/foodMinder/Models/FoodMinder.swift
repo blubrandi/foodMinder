@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct FoodMinder: Codable, Equatable{
+struct FoodMinder: Codable, Equatable {
     
-    let title: String
-    let body: String
+    var title: String
+    var body: String
     let identifier: String = UUID().uuidString
     var isActive: Bool
 

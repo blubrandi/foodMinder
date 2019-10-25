@@ -14,36 +14,49 @@ class FoodMinderViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-}
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        foodMinderPersisitentController.saveToPersistentStore()
+    }
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    func togglefoodMinderAt(cell: FoodMinderTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let foodMinder = foodMinderAt(indexPath: indexPath)
+        foodMinderPersisitentController.toogleActive(for: foodMinder)
+        
+        tableView.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
             let foodMinder = self.foodMinderPersisitentController.foodMinders[indexPath.row]
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [foodMinder.identifier])
             self.foodMinderPersisitentController.foodMinders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            foodMinderPersisitentController.saveToPersistentStore()
-            updateViews()
-            
-//            guard let foodMinderIndex = foodMinderPersisitentController.foodMinders.firstIndex(of: foodMinder) else { return }
-//            foodMinderPersisitentController.foodMinders.remove(at: foodMinderIndex)
-//            foodMinderPersisitentController.saveToPersistentStore()
-//            self.foodMinderPersisitentController.foodMinders.remove(at: foodMinder)
-            print("All the remove stuff ran")
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodMinderPersisitentController.foodMinders.count
+        if section == 0 {
+            return foodMinderPersisitentController.activeFoodMinders.count
+        } else {
+            return foodMinderPersisitentController.inactiveFoodMinders.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,6 +69,14 @@ class FoodMinderViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func foodMinderAt(indexPath: IndexPath) -> FoodMinder {
+        if indexPath.section == 0 {
+            return foodMinderPersisitentController.activeFoodMinders[indexPath.row]
+        } else {
+            return foodMinderPersisitentController.inactiveFoodMinders[indexPath.row]
+        }
+    }
+    
     
     // MARK: - Navigation
     
@@ -63,13 +84,6 @@ class FoodMinderViewController: UIViewController, UITableViewDataSource {
         if segue.identifier == "ToAddFoodMinderSegue" {
             if let addFoodMinderVC = segue.destination as? AddFoodMinderViewController {
                 addFoodMinderVC.delegate = self
-            }
-        } else if segue.identifier == "ToFoodMinderUpdateSegue" {
-            if let editFoodMinderVC = segue.destination as? UpdateFoodMinderViewController {
-                guard let indexPath = tableView.indexPathForSelectedRow else { return }
-                editFoodMinderVC.foodMinder = foodMinderPersisitentController.foodMinders[indexPath.row]
-                
-                
             }
         }
     }
